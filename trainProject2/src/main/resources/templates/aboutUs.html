@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>About Us</title>
+<link rel="icon" href="img/train-icon.ico" type="image/x-icon">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/aboutUs.css}">
+</head>
+<body>
+<div>
+<h1 align="center">TRAVELLING TRAIN</h1>
+</div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" style="height: 400px;" src="/img/steamTrain.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" style="height: 400px;" src="/img/steamTrain2.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" style="height: 400px;" src="/img/steamTrain3.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<table>
+<tr>
+	     <th width="8%" ><a th:href="@{/home}">Home Page</a></th>
+	
+		<th width="8%" ><a th:href="@{/aboutUs}">AboutUs</a></th>
+		
+		<th width="8%" ><a th:href="@{/contactUs}">ContactUs</a></th>
+		
+		<th width="8%" ><a th:href="@{/HomeSearchTrain}">Search Train</a></th>
+
+		<th width="8%" ><a th:href="@{/register}">UserRegistration</a></th>
+  
+		<th width="8%" ><a th:href="@{/loginPage}">Login</a></th>
+	</tr>
+	</table>
+<div class="h1" style="background-colour:#232323">
+<h2>Traveling Train Reservation</h2>
+</div>
+<div>
+<p>You can book a train seat 120 days ahead in General quota while Tatkal tickets can be booked a day in advance. You need to know that Indian Railways reservation has different travel classes and quotas with different counter timings. The general quota opens between 8 am to 8.30 am while the tatkal quota opens from 10 am to 10.30 am. If you have booked the non AC tatkal quota then its counter will be open between 11 am to 11.30 am.</p>
+<p>In order to check the Indian Railway seat availability visit indianrail.gov.in and click on seat availability which will ask you to provide in details like train number, journey date, source station, destination station, class and quota. Alternatively, you can also go to the NTES website and click on seat/berth availability to the extreme left of the page. On selecting the option you will be redirected to the website of indianrail.gov.in. In case you still to book train ticket then you can click on the seat/berth booking which is an option just below the seat/berth availability. The booking option will take you to the IRCTC website where you can make your train ticket booking.</p>
+<p><strong>First class AC:</strong><br>This class provides the most comfortable train travel with privacy and no disturbance. It comes with spacious coaches and latest facilities and bigger cabins.<p>
+<p><strong>Second class AC:</strong><br>It is a bit less than the first class when it comes to facilities but will guarantee you a similar travel experience. Go for it if you are looking for a comfortable travel with less expense.</p>
+<p><strong>Third class AC:</strong><br>If you are not too fussy about the facilities and features while travelling and all you need is an air conditioned coach then this is the best class for you. Sleeper class: This an affordable class of travel for people who want a budget-friendly journey. It comes without AC and is generally crowded so brace up yourself before your journey.</p>
+
+<h2>Improved and Faster Trains</h2>
+
+<p><strong>Tejas Express:</strong><br>The Indian Railways is set to reform and improve the passenger experience by making the train trips nothing less than air travel. Now you will be offered the flight-like experience while travelling in a train with Tejas Express going for a makeover. The IR is expected to come up with 23 new coaches with facilities including motor-operated windows, luxurious leather seats, infotainment LCD screens, USB charging points, GPS-based passenger information system, and modular touch-free toilets with bio-vacuum system.</p>
+<P><strong>Train 18:</strong><br>The IR is soon to launch Train 18 which is touted to be the fastest train in India. The train is said to run on a speed of 180 kmph and does not require a locomotive as it runs on an electric traction just like metro trains. Both the trains are going to revolutionise the face of the Indian Railways.</P>
+</div>
+      <!-- Footer -->
+<footer class="text-center text-start bg-dark text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center  p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5  font-weight-bold text-warning">
+        <h5>Get connected with us on social networks:</h5>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+    <a href="" class="me-4 btn-floating btn-sm text-white">
+          <i class="fab fa-facebook-f fa-2xl"></i>
+        </a>
+        <a href="" class="me-4 btn-floating btn-sm text-white">
+          <i class="fab fa-twitter fa-2xl"></i>
+        </a>
+        <a href="" class="me-4 btn-floating btn-sm text-white">
+          <i class="fab fa-google fa-2xl"></i>
+        </a>
+        <a href="" class="me-4 btn-floating btn-sm text-white">
+          <i class="fab fa-instagram fa-2xl"></i>
+        </a>
+        <a href="" class="me-4 btn-floating btn-sm text-white">
+          <i class="fab fa-linkedin fa-2xl"></i>
+        </a>
+       
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-3">
+        <!-- Grid row -->
+        <div class="row mt-2">
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-3 col-xl-5 mx-auto mb-3">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4 font-weight-bold text-warning">
+              <i class=" me-3 font-weight-bold text-warning"></i>Company name
+            </h6>
+            <p class="text-white" style="text-decoration: none;">
+                IRCTC offers Exclusive Rail tour packages with confirmed train tickets, sight-seeing and meals for enchanting Nilgiri Mountains, Darjeeling, Manali, Kashmir, Gangtok or divine tours of Mata Vaishno Devi, Rameswaram, Madurai, Shirdi, Tirupati etc. Holiday packages/ Land packages to these destinations are also available.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2   mx-auto mb-2">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-3 font-weight-bold text-warning">
+              Useful links
+            </h6>
+            <p>
+              <a href="#!" class="text-white" style="text-decoration: none;">Your Account</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white" style="text-decoration: none;">Refund Rules</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white" style="text-decoration: none;">disability facilities</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white" style="text-decoration: none;">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2  mb-2">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-2 font-weight-bold text-warning">
+                Products
+            </h6>
+            <p>
+              <a href="#!" class="text-white" style="text-decoration: none;">Catering Service</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white" style="text-decoration: none;">General Information</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white" style="text-decoration: none;">Creativity</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white" style="text-decoration: none;">Cancel Enquiry</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-2 col-xl-3 mx-auto mb-md-0 mb-2">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4 font-weight-bold text-warning">Contact</h6>
+            <p class="text-white" style="text-decoration: none;"><i class="fa-solid fa-train me-3"></i> IRCTC Exclusive, India</p>
+            <p class="text-white" style="text-decoration: none;"><i class="fas fa-envelope me-3"></i>IRCTC@gmail.com</p>
+            <p class="text-white" style="text-decoration: none;"><i class="fas fa-phone me-3"></i> IRCTC Helpline Number</p>
+            <p class="text-white" style="text-decoration: none;"><i class="fas fa-print me-3"></i> About IRCTC</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4 font-weight-bold text-warning" >
+        Copyright &copy; 2023 - . All Rights Reserved
+
+      <a class="text-reset font-weight-bold text-warning " style="text-decoration: none;" href="https://ingroinfo.com/">www.ingrOinfo.in</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</body>
+</html>

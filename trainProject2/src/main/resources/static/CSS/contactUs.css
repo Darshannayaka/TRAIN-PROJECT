@@ -1,0 +1,43 @@
+@charset "ISO-8859-1";
+body {
+	background-color: #077D68;
+	font-family: 'Poppins',sans-serif;
+}
+
+h1{
+background-color: #ccc;
+font-weight: bold;
+
+}
+
+
+table {
+	background-color: #EAB200;
+	text-align: center;
+	border-radius: 10px;
+	margin: auto;
+	margin-top: 5px;
+	position: sticky;
+	top: 0;
+	box-shadow: 0 0 10px #333;
+	
+}
+li{
+	color: #fff;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+a{
+	color: #232323;
+	text-decoration: none;
+}
+
+h4{
+	margin-top:15px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	outline: 2px solid black;
+	margin-left: 20px;
+	margin-right: 20px;
+}

@@ -1,0 +1,60 @@
+@charset "ISO-8859-1";
+
+.thead-dark {
+	background-color: black;
+	color: white;
+}
+
+.first-table {
+	background-color: #EAB200;
+	text-align: center;
+	border-radius: 10px;
+	/* margin: auto; */
+	width:100%;
+	height: 30px;
+	margin-top: -9px; 
+	position: sticky;
+	top: 0;
+	box-shadow: 0 0 10px #333;
+}
+
+body {
+	background-color: #077D68;
+	background:url(../img/steamTrain.jpg);
+	background-size: cover;
+}
+
+h1 {
+	background-color: #ccc;
+	font-weight: bold;
+}
+h2{
+	background-color: #ccc;
+	margin-top: 10px;
+}
+
+a {
+	color: #232323;
+	text-decoration: none;
+}
+
+.second-Table {
+	
+	width: 100%;
+	margin-left: -7%;
+	display: flex;
+}
+
+
+
+.data {
+	width: 100%;
+	background-color: #ffffff;
+}
+
+nav{
+	margin-top:-17px;
+	margin-left: 30px;
+	margin-right:65px;
+	background-color: white;
+}

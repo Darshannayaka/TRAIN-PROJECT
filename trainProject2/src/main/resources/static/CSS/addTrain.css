@@ -1,0 +1,91 @@
+@charset "ISO-8859-1";
+
+p{
+	margin-left: 100px;
+}
+body {
+	background-color: #077D68;
+	background:url(../img/steamTrain.jpg);
+	background-size: cover;
+}
+
+
+
+table {
+	background-color: #EAB200;
+	text-align: center;
+	border-radius: 10px;
+	margin: auto;
+	margin-top: 5px;
+	position: sticky;
+	top: 0;
+	box-shadow: 0 0 10px #333;
+}
+
+h1 {
+	background-color: #ccc;
+}
+a{
+	color: #232323;
+	text-decoration: none;
+}
+p{
+	color: #ffffff;
+	margin: 0;
+}
+h3{
+	color: #ffffff;
+	margin-top: 30px;
+}
+label {
+	color: #ffffff;
+}
+.col-6{
+	padding: 2%;
+	width: 60%;
+	
+}
+.col-4{
+	margin-top: 20px;
+	margin-left: 30px;
+	width: 120px;
+	font-weight: bold;
+}
+
+.container{
+	background-color: #cc9966;
+	width: 600px;
+	height: 750px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+
+button {
+	margin-top: 20px;
+}
+.col-10{
+	
+	width: 100%;
+	height: 40px;
+}
+
+.first-table {
+	background-color: #EAB200;
+	text-align: center;
+	border-radius: 10px;
+	margin: auto;
+	margin-top: 5px;
+	position: sticky;
+	top: 0;
+	box-shadow: 0 0 10px #333;
+}
+
+/* input:invalid{
+	animation: shake .3s;
+}
+
+@keyframes shake {
+	25% { transform: translateX(4px)}
+	50% { transform: translateX(-4px)}	
+	75% { transform: translateX(4px)}
+} */

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Registration</title>
+  <link rel="stylesheet" th:href="@{/CSS/style1.css}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
+	
+  <style>
+    /* Add a black background color to the top navigation */
+    .topnav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      border-bottom: 3px solid transparent;
+    }
+
+    .topnav a:hover {
+      border-bottom: 3px solid red;
+    }
+
+    .topnav a.active {
+      border-bottom: 3px solid red;
+    }
+
+    /* Add dropdown styles */
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 17px;
+      border: none;
+      outline: none;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      background-color: inherit;
+      margin: 0;
+    }
+
+    .topnav a:hover,
+    .dropdown:hover .dropbtn {
+      border-bottom: 3px solid red;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<div>
+		<h1 class="head" align="center">TRAVELLING TRAIN</h1>
+	</div>
+	<div class="topnav">
+	  <a th:href="@{/home}" class="active">Home</a>
+	  <a th:href="@{/about}">About</a>
+	  <a th:href="@{/contact}">Contact</a>
+	  <!-- <div class="dropdown">
+	    <button class="dropbtn">Service</button>
+	    <div class="dropdown-content">
+	      <a th:href="@{/service}">Service 1</a>
+	      <a th:href="@{/service}">Service 2</a>
+	      <a th:href="@{/service}">Service 3</a>
+	    </div>
+	  </div> -->
+	  <div class="dropdown">
+	    <button class="dropbtn">Pages ></button>
+	    <div class="dropdown-content">
+	      <a th:href="@{/gallery}">Gallery</a>
+	      <a th:href="@{/directors}">Directors</a>
+	    </div>
+	  </div>
+	  <a th:href="@{/register}">User Registration</a>
+	  <a th:href="@{/loginPage}">Login</a>
+	</div>
+	
+	
+	
+  <div class="main_box">
+        <input type="checkbox" id="check">
+        <div class="btn_one">
+          <label for="check">
+            <i class="fas fa-bars"></i>
+          </label>
+        </div>
+        <div class="sidebar_menu">
+          <div class="logo">
+            <a href="#">Travelling Train</a>
+          </div>
+          <div class="btn_two">
+            <label for="check">
+              <i class="fas fa-times"></i>
+            </label>
+          </div>
+          <div class="menu">
+            <ul>
+              <li><i class="fas fa-qrcode"></i>
+                <a href="#">Dashboard</a>
+              </li>
+              <li>
+                <i class="fas fa-link"></i>
+                <a href="#">Shortcuts</a>
+              </li>
+              <li>
+                <i class="fas fa-stream"></i>
+                <a href="#">Overview</a>
+              </li>
+              <li>
+                <i class="fas fa-calendar-week"></i>
+                <a href="#">Events</a>
+              </li>
+              <li>
+                <i class="fas fa-question-circle"></i>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <i class="fas fa-sliders-h"></i>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <i class="fas fa-phone-volume"></i>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <i class="far fa-comments"></i>
+                <a href="#">Feedback</a>
+              </li>
+            </ul>
+          </div>
+       <!--    <div class="social_media">
+            <ul>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+	<!-- <table>
+		<tr>
+			<th width="8%"><a th:href="@{/home}">Home Page</a></th>
+			<th width="8%"><a th:href="@{/about}">About Us</a></th>
+			<th width="8%"><a th:href="@{/contact}">Contact Us</a></th>
+			<th width="8%"><a th:href="@{/register}">User Registration</a></th>
+			<th width="8%"><a th:href="@{/loginPage}">Login</a></th>
+		</tr>
+	</table> -->
+
+	<div class="container">
+		<div class="title">Registration</div>
+
+		<!-- Start of Alert Message Field -->
+		<div class="message">
+			<div th:if="${session.message}">
+				<div class="alert alert-primary" role="alert" th:classappend="${'alert-'+session.message.type}">
+					<span class="text-dark fw-bold" th:text="${session.message.content}"></span>
+				</div>
+				<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+			</div>
+		</div>
+		<!-- End of Alert Message Field -->
+
+		<div class="content">
+			<form th:action="@{/process_register}" method="post">
+				<div class="user-details">
+					<div class="input-box">
+						<span class="details">First Name</span>
+						<input type="text" placeholder="Enter your First Name" name="firstName" id="firstName" th:minlength="2" maxlength="20" required>
+						<span id="firstNameError" style="color: yellow;"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Last Name</span>
+						<input type="text" placeholder="Enter your Last Name" name="lastName" id="lastName" th:minlength="1" maxlength="20" required>
+						<span id="lastNameError" style="color: yellow;"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Email ID</span>
+						<input type="text" id="email" name="email" placeholder="Enter your email" required>
+						<span id="emailError" style="color: yellow;"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Aadhar Number</span>
+						<input type="text" placeholder="Enter your Aadhar Number" name="aadharNumber" pattern="[0-9]{12}" th:minlength="12" maxlength="12" id="aadharNumber" required>
+						<span id="aadharNumberError" style="color: yellow;"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Password</span>
+						<input type="password" placeholder="Enter your password" name="password" id="password" maxlength="8" required>
+						<span id="passwordError" style="color: yellow;"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Confirm Password</span>
+						<input type="password" placeholder="Confirm your password" name="confirmPassword" id="confirmPassword" maxlength="8" required>
+						<span id="confirmPasswordError" style="color: yellow;"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Phone Number</span>
+						<input type="text" placeholder="Enter your Phone Number" name="phone" pattern="[0-9]{10}" id="phoneNumber" maxlength="10" required>
+						<span id="phoneNumberError" style="color: yellow;"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Address</span>
+						<textarea placeholder="Enter your Address" name="address" id="address" maxlength="50" required></textarea>
+						<span id="addressError" style="color: yellow;"></span>
+					</div>
+				</div>
+				<div class="button">
+					<input type="submit" value="Register">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		const firstNameInput = document.getElementById('firstName');
+		const lastNameInput = document.getElementById('lastName');
+		const emailInput = document.getElementById('email');
+		const aadharNumberInput = document.getElementById('aadharNumber');
+		const passwordInput = document.getElementById('password');
+		const confirmPasswordInput = document.getElementById('confirmPassword');
+		const phoneNumberInput = document.getElementById('phoneNumber');
+		const addressInput = document.getElementById('address');
+
+		const firstNameError = document.getElementById('firstNameError');
+		const lastNameError = document.getElementById('lastNameError');
+		const emailError = document.getElementById('emailError');
+		const aadharNumberError = document.getElementById('aadharNumberError');
+		const passwordError = document.getElementById('passwordError');
+		const confirmPasswordError = document.getElementById('confirmPasswordError');
+		const phoneNumberError = document.getElementById('phoneNumberError');
+		const addressError = document.getElementById('addressError');
+
+		function validateFirstName() {
+			if (firstNameInput.value.trim() === '') {
+				firstNameError.textContent = 'First Name is required';
+				return false;
+			} else if (firstNameInput.value.trim().length < 2) {
+				firstNameError.textContent = 'First Name must be at least 2 characters';
+				return false;
+			} else {
+				firstNameError.textContent = '';
+				return true;
+			}
+		}
+
+		function validateLastName() {
+			if (lastNameInput.value.trim() === '') {
+				lastNameError.textContent = 'Last Name is required';
+				return false;
+			} else if (lastNameInput.value.trim().length < 1) {
+				lastNameError.textContent = 'Last Name must be at least 1 character';
+				return false;
+			} else {
+				lastNameError.textContent = '';
+				return true;
+			}
+		}
+
+		function validateEmail() {
+			  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			  if (emailInput.value.trim() === '') {
+			    emailError.textContent = 'Email is required';
+			    return false;
+			  } else if (!emailRegex.test(emailInput.value.trim())) {
+			    emailError.textContent = 'Invalid Email';
+			    return false;
+			  } else if (/[~`!#$%^&*+=\-[\]\\';,/{}|\\":<>?]/g.test(emailInput.value.trim())) {
+			    emailError.textContent = 'Email should not contain special characters';
+			    return false;
+			  } else {
+			    emailError.textContent = '';
+			    return true;
+			  }
+			}
+
+/* 			function validateAadharNumber() {
+			    if (aadharNumberInput.value.trim() === '') {
+			        aadharNumberError.textContent = 'Aadhar Number is required';
+			        return false;
+			    } else if (!/^[0-9]{12}$/.test(aadharNumberInput.value.trim())) {
+			        aadharNumberError.textContent = 'Aadhar Number must contain exactly 12 digits';
+			        return false;
+			    } else {
+			        aadharNumberError.textContent = '';
+			        return true;
+			    }
+			} */
+			
+			
+			function validateAadharNumber() {
+				const phoneNumberRegex = /^[0-9]{12}$/;
+				if (aadharNumberInput.value.trim() === '') {
+					aadharNumberError.textContent = 'Aadhar Number is required';
+					return false;
+				} else if (!phoneNumberRegex.test(aadharNumberInput.value.trim())) {
+					aadharNumberError.textContent = 'Aadhar Number must contain exactly 12 digits';
+					return false;
+				} else {
+					aadharNumberError.textContent = '';
+					return true;
+				}
+			}
+
+		function validatePassword() {
+			if (passwordInput.value.trim() === '') {
+				passwordError.textContent = 'Password is required';
+				return false;
+			} else if (passwordInput.value.trim().length < 6 || passwordInput.value.trim().length > 8) {
+				passwordError.textContent = 'Password must be between 6 to 8 characters';
+				return false;
+			} else {
+				passwordError.textContent = '';
+				return true;
+			}
+		}
+
+		function validateConfirmPassword() {
+			if (confirmPasswordInput.value.trim() === '') {
+				confirmPasswordError.textContent = 'Confirm Password is required';
+				return false;
+			} else if (confirmPasswordInput.value.trim() !== passwordInput.value.trim()) {
+				confirmPasswordError.textContent = 'Passwords do not match';
+				return false;
+			} else {
+				confirmPasswordError.textContent = '';
+				return true;
+			}
+		}
+
+		function validatePhoneNumber() {
+			const phoneNumberRegex = /^[0-9]{10}$/;
+			if (phoneNumberInput.value.trim() === '') {
+				phoneNumberError.textContent = 'Phone Number is required';
+				return false;
+			} else if (!phoneNumberRegex.test(phoneNumberInput.value.trim())) {
+				phoneNumberError.textContent = 'Invalid Phone Number';
+				return false;
+			} else {
+				phoneNumberError.textContent = '';
+				return true;
+			}
+		}
+
+		function validateAddress() {
+			if (addressInput.value.trim() === '') {
+				addressError.textContent = 'Address is required';
+				return false;
+			} else {
+				addressError.textContent = '';
+				return true;
+			}
+		}
+
+		function validateForm(event) {
+			event.preventDefault();
+			const isFirstNameValid = validateFirstName();
+			const isLastNameValid = validateLastName();
+			const isEmailValid = validateEmail();
+			const isAadharNumberValid = validateAadharNumber();
+			const isPasswordValid = validatePassword();
+			const isConfirmPasswordValid = validateConfirmPassword();
+			const isPhoneNumberValid = validatePhoneNumber();
+			const isAddressValid = validateAddress();
+
+			if (isFirstNameValid && isLastNameValid && isEmailValid && isAadharNumberValid && isPasswordValid && isConfirmPasswordValid && isPhoneNumberValid && isAddressValid) {
+				event.target.submit();
+			}
+		}
+
+		firstNameInput.addEventListener('input', validateFirstName);
+		lastNameInput.addEventListener('input', validateLastName);
+		emailInput.addEventListener('input', validateEmail);
+		aadharNumberInput.addEventListener('input', validateAadharNumber);
+		passwordInput.addEventListener('input', validatePassword);
+		confirmPasswordInput.addEventListener('input', validateConfirmPassword);
+		phoneNumberInput.addEventListener('input', validatePhoneNumber);
+		addressInput.addEventListener('input', validateAddress);
+	</script>
+</body>
+</html>

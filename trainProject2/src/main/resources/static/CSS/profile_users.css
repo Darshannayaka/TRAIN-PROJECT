@@ -1,0 +1,173 @@
+@charset "ISO-8859-1";
+
+
+h1{background-color: #ccc;
+	font-weight: bold;
+	font-size: 40px;
+}
+a{
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+table {
+	background-color: #EAB200;
+	text-align: center;
+	border-radius: 10px;
+	/* margin: auto; */
+	width:100%;
+	height: 30px;
+	/* margin-top: -9px; */ 
+	position: sticky;
+	top: 0;
+	box-shadow: 0 0 10px #333;
+	
+}
+
+span{
+	color: #808080;
+}
+
+label{
+	font-weight: bold;
+	text-transform:uppercase;
+}
+body{
+    font-family: /* 'Quicksand', */ sans-serif;
+    background:url(../img/steamTrain.jpg);
+	background-size: cover;
+	background-color: #077D68;
+  }
+  *{
+    margin:0;
+    padding:0
+  }
+  .card{
+    width:400px;
+    height:auto;
+    background:#efefef;
+    padding:30px;
+    box-sizing:border-box;
+    text-align:left;
+    border-radius:20px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    overflow:hidden;
+    line-height: 20px; 
+  }
+  .card img{
+    width:100px;
+    height:100px;
+    display:block;
+    margin:auto;
+    border-radius:50%;
+  }
+  .card div h1{
+    text-transform:uppercase;
+    margin-top:20px;
+    margin-bottom:20px;
+    line-height:24px
+  }
+  .card div h1 span{
+    font-size:20px;
+    color:#f39c12
+  }
+  .card div ul{
+    list-style:none;
+  }
+  .card div ul li{
+    display:inline-block;
+    margin:20px 10px
+  }
+  .card div ul li a{
+    color:#2980b9;
+    font-size:20px;
+    transition:0.2s;
+  }
+  .card div ul li a:hover{
+    color:#000
+  }
+  .card div a.btn{
+    text-decoration:none;
+    color:#000;
+    letter-spacing:5px;
+    font-weight:bold;
+    border:1px solid #000;
+    font-weight:bold;
+    padding:10px;
+    border-radius:2px;
+    margin-top:15px;
+    display:inline-block;
+    transition:0.2s;
+  }
+  .card div a.btn:hover{
+    border-color:#f39c12
+  }
+  .card:before{
+    position:absolute;
+    content:'';
+    width:100px;
+    height:100px;
+    background:#ddd;
+    bottom:0;
+    right:0;
+    z-index:-1;
+    border-top-left-radius:100px;
+    transition:0.5s;
+  }
+  .card:hover:before{
+    transform:scale(10)
+  }
+  
+  /* side bar style*/
+
+@media only screen and (max-width:600px){
+	
+}
+.sidebar{
+	width: 18%;
+	background: white;
+	height: 100vh;
+	position:fixed;
+	padding-top: 45px;
+}
+.siderbar a{
+	display: block;
+	width: 100%;
+	padding: 10% 25%;
+	text-decoration: none;
+	color: gray;
+}
+
+.content{
+	margin-left: 20%;
+}
+
+.item{
+		display: block;
+	width: 100%;
+	padding: 5% 15%;
+	text-decoration: none;
+	color: gray;
+}
+.item:hover{
+	background: #e2e2e2;
+}
+.sidebar .divider{
+	height: .5px;
+	width: 100%;
+	background: #e2e2e2;
+	margin-top: 10px;
+}
+
+.crossBtn{
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+} 
+
+

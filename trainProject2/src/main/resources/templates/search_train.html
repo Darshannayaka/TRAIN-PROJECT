@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<title>Search Train Details</title>
+<link rel="icon" href="img/train-icon.ico" type="image/x-icon">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
+	
+
+<link rel="stylesheet" th:href="@{/CSS/search_train.css}">
+
+</head>
+<body>
+
+<div>
+<h1 th:align="center">TRAVELLING TRAIN</h1>
+</div>
+
+<table>
+<tr>
+	    <th width="8%" ><a th:href="@{/user/index}">Home Page</a></th>
+		<th width="8%" ><a th:href="@{/user/profile-user}">USER: [<span th:text="${user.firstName}"></span>]</a></th>
+		<th width="8%"><a th:href="@{/logout}">Logout</a></th>
+</tr>
+</table>		
+		<!-- sidebar -->
+		<div class="sidebar">
+		
+		<span onclick="toggleSidebar()" class="crossBtn">&times;</span> 
+		
+		<a href="#" th:href="@{/user/index}" class="item"> <i class="fa-solid fa-house-user"></i>  Home</a>
+		<a href="#" th:href="@{/user/searchTrain}" class="item"> <i class="fa-solid fa-train"></i>  Search Train</a>
+		<a href="#" th:href="@{/user/booking-details}" class="item"> <i class="fa-solid fa-book"></i>  Booking Details</a>
+		<a href="#" th:href="@{/user/profile-user}" class="item"> <i class="fa-solid fa-user"></i>  Your Profile</a>
+		<a href="#" th:href="@{/user/settings}" class="item"> <i class="fas fa-cogs"></i>  Settings</a>
+		<a href="/logout" class="item"> <i class="fa-solid fa-right-from-bracket"></i>  Logout</a>
+		<div class="divider"></div>
+		</div>
+		<!-- end sidebar -->
+		
+		<!-- content area -->
+		<div class="content">
+		
+		<i onclick="toggleSidebar()" class="fas fa-bars m-3"></i> 
+		
+		</div>
+		<!-- end of content area -->
+	<div class="text-center">
+		<div class="contain">
+			<div class="row">
+				
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+			<a th:class="navbar-brand" href="#"> 
+			</a>
+		</div>
+
+
+		<div class="row justify-content-center">
+			<div class="container">
+
+				<h3 class="heading-three">Search Train</h3>
+				
+			
+				<div>
+					<form th:action="@{/user/trainBook}" method="post" th:object="${addTrains}"
+						style="max-width: 600px; margin: 0 auto;">
+						<div class="m-2">
+
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Train From</label>
+								<div class="col-6">
+									<input type="text" name="trainFrom" class="form-control"
+										required placeholder="Enter Train From" minlength="2"
+										maxlength="100" />
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Train To</label>
+								<div class="col-6">
+									<input type="text" name="trainTo" class="form-control"
+										required placeholder="Enter Train To" minlength="2"
+										maxlength="100" />
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Departure Date</label>
+								<div class="col-6">
+									<input type="date" class="form-control" name="departureDate"
+										required placeholder="departureDate" minlength="2"
+										maxlength="100" id="demo"/>
+								</div>
+							</div>
+						
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Class</label>
+								<div class="col-6">
+							<select name="classes" class="col-10">
+									<option value="" >--Select--</option>
+									<option value="GN - Unreserved">GN - Unreserved</option>
+									<option value="SL - Sleeper">SL - Sleeper</option>
+									<option value="3A - AC 3-Tier">3A - AC 3-Tier</option>
+									<option value="2A - AC 2-Tier">2A - AC 2-Tier</option>
+									<option value="1A - First Class AC">1A - First Class AC</option>
+									<option value="CC - AC Chair Car">CC - AC Chair Car</option>
+									<option value="EC - Executive Chair Car">EC - Executive Chair Car</option>
+									<option value="2S - Second Sitting">2S - Second Sitting</option>
+									<option value="FC - First Class">FC - First Class</option>
+							</select>
+							</div>
+							</div>
+							
+							<div>
+								<button type="submit" class="btn btn-success">Search</button>
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<br>
+	<script th:src="@{/JS/sidebar.js}"></script>
+<script>
+    var date = new Date();
+    var tdate = date.getDate();
+    var month = date.getMonth() + 1;//returns previous month so add +1
+   
+   
+    if(tdate < 10){
+    tdate = "0" + tdate;
+   }
+
+
+    if(month < 10){// index starts 0 to 9
+        month = "0" + month;
+    }
+   
+   
+    var year = date.getUTCFullYear() ;
+    var minDate = year + "-" + month + "-" + tdate;
+
+    document.getElementById("demo").setAttribute('min',minDate);
+
+    console.log(minDate);
+
+
+</script>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+</body>
+</html>

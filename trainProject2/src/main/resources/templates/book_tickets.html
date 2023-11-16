@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Book tickets</title>
+<link rel="icon" href="img/train-icon.ico" type="image/x-icon">
+<link rel="stylesheet" th:href="@{/CSS/book_tickets.css}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+</head>
+<body>
+	<div>
+	<h1 class="head" align="center">TRAVELLING TRAIN</h1>
+	</div>
+
+
+
+	<table>
+        <tr>
+            <th width="8%"><a th:href="@{/user/index}">Home Page</a></th>
+            <th width="8%"><a th:href="@{/user/searchTrain}">Search Train</a></th>
+            <th width="8%"><a th:href="@{/logout}">Logout</a></th>
+        </tr>
+
+    </table>
+	
+	
+	<div class="container1">
+		<div class="title">Fill Up Details</div>
+		<div class="content">
+			<form th:action="@{/user/bookTrainTicket}" method="post">
+				<div>
+                <input type="hidden" name="id" th:field="${addTrains.id}">
+                </div>
+                <div class="user-details">
+					<div class="input-box">
+						<span class="details">First Name</span> <input type="text"
+							placeholder="Enter Your FirstName" name="firstName" id="alphabet" required>
+							<span id="alphabetError" style="color: yellow;"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Last Name</span> 
+                        <input type="text"
+							placeholder="Enter your LastName" name="lastName" id="alphabets" required>
+							<span id="alphabetsError" style="color: yellow;"></span>
+					</div>
+					<div class="input-box"> 
+                        <span class="details">Email</span> <input type="email"
+                        placeholder="Enter your Email" name="email" id="email"
+                         required>
+                         <span id="emailError" style="color: yellow;"></span> 
+					</div>
+					<div class="input-box">
+						<span class="details">Age</span> <input type="text"
+							placeholder="Enter Your Age" name="age" minlength="1" maxlength="2"
+							id="number" required>
+							<span id="numberError" style="color: yellow;"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Gender</span> 
+                        <select name="gender" class="genders">
+                            <option value="">--Select--</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="TransGender">TransGender</option>
+                        </select>
+					</div>
+					<div class="input-box">
+						<span class="details">Phone Number</span> <input type="text"
+							placeholder="Enter your Phone Number" name="phone" 
+							minlength="10" maxlength="10" id="numberss" required>
+							<span id="numberssError" style="color: yellow;"></span>
+					</div>
+                    
+                    <div class="input-box">
+						<span class="details">Aadhar Number</span> <input type="text"
+							placeholder="Enter your AadharNumber" name="aadharNumber" 
+							minlength="12" maxlength="12" id="numbers" required>
+							<span id="numbersError" style="color: yellow;"></span>
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Train Name</span> <input type="text"
+						 name="trainName" th:value="${addTrains.trainName}" required readonly="readonly"/>
+					</div>
+                    <div class="input-box">
+						<span class="details">Schedule</span> <input type="text"
+                        name="schedule"
+                        th:value="${addTrains.schedule}" required
+                        readonly="readonly"  />
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Train From</span> <input type="text"
+                        name="trainFrom" 
+                        th:value="${addTrains.trainFrom}" required
+                        readonly="readonly" />
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Train To</span> <input type="text"
+                        name="trainTo"
+                        th:value="${addTrains.trainTo}" required
+                        readonly="readonly" />
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Departure Date</span> <input type="date" 
+                        name="departureDate" 
+                        th:value="${addTrains.departureDate}" required
+                        readonly="readonly" />
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Train From Timing</span> <input type="time" 
+                        name="trainFromTiming" 
+                        th:value="${addTrains.trainFromTiming}" required
+                        readonly="readonly" />
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Train To Time</span> <input type="time" 
+                        name="trainToTime" 
+                        th:value="${addTrains.trainToTime}" required
+                        readonly="readonly" />
+					</div>
+
+					<div class="input-box">
+						<span class="details">Ticket Price</span> <input type="text"
+                        name="ticketPrice" 
+                        th:value="${addTrains.ticketPrice}" required
+                        readonly="readonly"  />
+							
+						</div>
+					
+				</div>
+				<div class="button">
+					<input type="submit" value="Submit" onclick="validateNumber(event),validateNumbers(event),validateNumberss(event),validateEmail(event),validateAlphabet(event),validateAlphabets(event)">
+				</div>
+				
+			</form>
+		</div>
+	</div>
+ <script>
+    function validateNumber(event) {
+      event.preventDefault();
+      const numberInput = document.getElementById('number');
+      const numberError = document.getElementById('numberError');
+      const numberRegex = /^\d+$/; // Regular expression to match numbers only
+      
+      if (!numberRegex.test(numberInput.value)) {
+        numberError.textContent = 'Invalid number format. Please enter digits only.';
+      } else {
+        numberError.textContent = '';
+        numberInput.setCustomValidity('');
+        document.forms[0].submit();
+      }
+    }
+  </script>
+  
+   <script>
+    function validateNumbers(event) {
+      event.preventDefault();
+      const numbersInput = document.getElementById('numbers');
+      const numbersError = document.getElementById('numbersError');
+      const numbersRegex = /^\d+$/; // Regular expression to match numbers only
+      
+      if (!numbersRegex.test(numbersInput.value)) {
+        numbersError.textContent = 'Invalid number format. Please enter digits only.';
+      } else {
+        numbersError.textContent = '';
+        numbersInput.setCustomValidity('');
+        document.forms[0].submit();
+      }
+    }
+  </script>
+  
+     <script>
+    function validateNumberss(event) {
+      event.preventDefault();
+      const numberssInput = document.getElementById('numberss');
+      const numberssError = document.getElementById('numberssError');
+      const numberssRegex = /^\d+$/; // Regular expression to match numbers only
+      
+      if (!numberssRegex.test(numberssInput.value)) {
+        numberssError.textContent = 'Invalid number format. Please enter digits only.';
+      } else {
+        numberssError.textContent = '';
+        numberssInput.setCustomValidity('');
+        document.forms[0].submit();
+      }
+    }
+  </script>
+  
+  <script>
+		function validateEmail(event) {
+			event.preventDefault();
+			const emailInput = document.getElementById('email');
+			const emailError = document.getElementById('emailError');
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!emailRegex.test(emailInput.value)) {
+				emailError.textContent = 'Invalid email format.';
+			} else if (emailInput.value.includes('#') || emailInput.value.includes('$') || emailInput.value.includes('%') || emailInput.value.includes('&')) {
+				emailError.textContent = 'Email should not contain #, $, %, or & characters.';
+			} else {
+				emailError.textContent = '';
+				emailInput.setCustomValidity('');
+				document.forms[0].submit();
+			}
+		}
+	</script>
+	
+	    <script>
+    function validateAlphabet(event) {
+      event.preventDefault();
+      const alphabetInput = document.getElementById('alphabet');
+      const alphabetError = document.getElementById('alphabetError');
+      const alphabetRegex = /^[a-zA-Z]+$/; // Regular expression to match alphabets only
+      
+      if (!alphabetRegex.test(alphabetInput.value)) {
+        alphabetError.textContent = 'Invalid alphabet format. Please enter alphabets only.';
+      } else {
+        alphabetError.textContent = '';
+        alphabetInput.setCustomValidity('');
+        document.forms[0].submit();
+      }
+    }
+  </script>
+
+  <script>
+    function validateAlphabets(event) {
+      event.preventDefault();
+      const alphabetsInput = document.getElementById('alphabets');
+      const alphabetsError = document.getElementById('alphabetsError');
+      const alphabetsRegex = /^[a-zA-Z]+$/; // Regular expression to match alphabets only
+      
+      if (!alphabetsRegex.test(alphabetsInput.value)) {
+        alphabetsError.textContent = 'Invalid alphabet format. Please enter alphabets only.';
+      } else {
+        alphabetsError.textContent = '';
+        alphabetsInput.setCustomValidity('');
+        document.forms[0].submit();
+      }
+    }
+  </script>
+</body>
+</html>

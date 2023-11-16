@@ -1,0 +1,816 @@
+/********** Template CSS **********/
+:root {
+    --primary: #D81324;
+    --secondary: #0B2154;
+    --light: #ccc;
+    --dark: #111111;
+}
+
+body{
+    background-color: #ccc;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+ol, ul {
+  padding-left: 2px;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 2px;
+}
+
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #FFFFFF;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar-light .navbar-brand,
+.navbar-light a.btn {
+    height: 75px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.navbar-light.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.page-header {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-header-inner {
+    background: rgba(0, 0, 0, .7);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** Facts ***/
+.fact {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/steamTrain.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*** Service ***/
+.service .nav .nav-link {
+    background: var(--light);
+    transition: .5s;
+}
+
+.service .nav .nav-link.active {
+    background: var(--primary);
+}
+
+.service .nav .nav-link.active h4 {
+    color: #FFFFFF !important;
+}
+
+
+/*** Booking ***/
+.booking {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/steamTrain.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.bootstrap-datetimepicker-widget.bottom {
+    top: auto !important;
+}
+
+.bootstrap-datetimepicker-widget .table * {
+    border-bottom-width: 0px;
+}
+
+.bootstrap-datetimepicker-widget .table th {
+    font-weight: 500;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+    background: var(--primary);
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+    border-bottom-color: var(--primary);
+}
+
+
+/*** Team ***/
+.team-item .team-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    transform: scale(0);
+    transition: .5s;
+}
+
+.team-item:hover .team-overlay {
+    transform: scale(1);
+}
+
+.team-item .team-overlay .btn {
+    color: var(--primary);
+    background: #FFFFFF;
+}
+
+.team-item .team-overlay .btn:hover {
+    color: #FFFFFF;
+    background: var(--secondary)
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-item .testimonial-text,
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+    background: var(--primary) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    color: #FFFFFF !important;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #CCCCCC;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+
+/*** Footer ***/
+.footer {
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/steamTrain.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+/*slides*/
+section#slides_parent {
+    padding-bottom: 150px;
+}
+
+.slides{
+    display: flex;
+    justify-content: center;
+}
+
+.slide_1{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/steamTrain.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 60px;
+    min-width: 60px;
+    height: 300px;
+    border-radius: 40px;
+    margin: 0 15px;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.slide_1:hover{
+    min-width: 250px;
+}
+
+.slide_1:hover .slide-info{
+    transform: rotate(0deg);
+    font-size: 22px;
+    left: 20px;
+    bottom: 20px;
+}
+
+.slide-info{
+    position: absolute;
+    bottom: 51px;
+    right: 0;
+    color: #fff;
+    transform: rotate(-90deg);
+    font-size: 12px;
+    /* font-weight: 700; */
+    transition: all 0.5s ease;
+}
+
+.slide_2{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/darjeeling-train.jpg); 
+}
+
+.slide_3{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/hilly-train.jpg); 
+}
+
+.slide_4{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/mountain-train.jpg); 
+}
+
+.slide_5{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/royal-train.jpg); 
+}
+
+.slide_6{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/kerala-train.jpg); 
+}
+
+.slide_7{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/train.jpg); 
+}
+/*slides*/
+
+
+/*blog*/
+#blog {
+    padding: 100px 0;
+}
+
+#blog h3 {
+    color: #343a40;
+    font-size: 42px;
+    font-weight: 600;
+    padding-bottom: 12px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+div#blog-par {
+    display: flex;
+    margin-top: 70px;
+}
+
+.blog-content {
+    display: flex;
+    align-items: center;
+}
+
+.blog-info ul li {
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #999;
+    font-size: 13px !important;
+    font-size: 0.75rem;
+    margin-right: 5px;
+}
+
+.blog-img {
+    position: relative;
+}
+
+.blog-img:before {
+    content: "16 March";
+    position: absolute;
+    right: 0;
+    top: 0px;
+    font-size: 17px;
+    background-color: #00a8c5;
+    color: #fff;
+    z-index: 1;
+    padding: 9px;
+}
+
+.blog-img img {
+    height: 140px;
+    width: 300px;
+}
+
+.blog-info {
+    margin-left: 30px;
+}
+
+.blog-info h4 {
+    color: #00a8c5;
+    font-size: 20px;
+    margin: 6px 0px;
+    cursor: pointer;
+}
+
+.blog-content p {
+    color: #777;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+
+/*gallery*/
+
+section#gallery {
+    margin: 100px 0px;
+}
+
+.filter-button {
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;
+
+}
+
+.filter-button:hover {
+    font-size: 18px;
+    border: 1px solid #00a8c5;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #00a8c5;
+
+}
+
+.filter-button {
+    font-size: 18px;
+    border: 1px solid #00a8c5;
+    border-radius: 5px;
+    text-align: center;
+    color: #Fff;
+    margin-bottom: 30px;
+    background-color: #00a8c5;
+    padding: 10px 20px;
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.filter-button:focus {
+    background-color: #fff;
+    color: #00a8c5;
+    outline: none;
+}
+
+.filter-gal-par {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.port-image {
+    width: 100%;
+}
+
+.gallery_product {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.gallery_product img {
+    width: 360px;
+    height: 300px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.gallery_product img:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.7;
+    transform: scale(1.1, 1.1);
+}
+
+/*holyday-fiji*/
+
+#fiji-holyday {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/steamTrain.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+     padding: 45px 0px;  
+}
+
+section#fiji-holyday h3 {
+    color: #343a40;
+    font-size: 42px;
+    font-weight: 600;
+    padding-bottom: 12px;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+
+.owl-img-par {
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+}
+
+.owl-img-info {
+    position: absolute;
+    bottom: 20px;
+    color: #fff;
+    left: 25px;
+}
+
+.owl-img-par img {
+    filter: brightness(0.6);
+    transition: all 0.5s ease;
+}
+
+.owl-img-par img:hover {
+    transform: scale(1.1, 1.1);
+}
+
+section#project {
+    position: relative;
+    margin-top: 50px;
+}
+
+.owl-carousel.owl-theme.owl-loaded.owl-drag {
+    margin-top: 50px;
+}
+
+.owl-img-info h3 {
+    font-size: 23px !important;
+}
+
+
+.main_box{
+  position: relative;
+  width: 100%;
+
+}
+.main_box .sidebar_menu{
+  position: fixed;
+  height: 100vh;
+  width: 280px;
+  right: -280px;
+    margin-top: -23px;
+  background: rgba(9, 179, 231, 0.879);
+  box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+.sidebar_menu .logo{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5);
+}
+.sidebar_menu .logo a{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 50px;
+  line-height: 60px;
+  text-decoration: none;
+}
+.sidebar_menu .menu{
+  position: absolute;
+  top: 80px;
+  width:100%;
+}
+.sidebar_menu .menu li{
+  margin-top: 6px;
+  padding: 14px 20px;
+}
+.sidebar_menu .menu i{
+  color: #fff;
+  font-size: 20px;
+  padding-right: 8px;
+}
+.sidebar_menu .menu a{
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+.sidebar_menu .menu li:hover{
+  border-left: 1px solid #fff;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+.sidebar_menu .social_media{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  list-style: none;
+  cursor: pointer;
+}
+.sidebar_menu .social_media i{
+  text-decoration: none;
+  padding: 0 5px;
+  color: #fff;
+  opacity: 0.6;
+  font-size: 20px;
+}
+.sidebar_menu .social_media i:hover{
+  opacity: 1;
+  transition: all 0.2s linear;
+  transform: scale(1.01);
+}
+#check{
+  display: none;
+}
+.main_box .btn_one i{
+  color: yellow;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  right: 16px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.3s linear;  
+}
+ .sidebar_menu .btn_two i{
+  font-size: 25px;
+  line-height: 60px;
+  position: absolute;
+  left: 240px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+.btn_one i:hover{
+  font-size: 29px;
+}
+.btn_two i:hover{
+  font-size: 24px;
+}
+#check:checked ~ .sidebar_menu{
+  right: 0;
+}
+#check:checked ~ .btn_one i{
+  opacity: 0;
+}
+#check:checked ~ .sidebar_menu .btn_two i{
+  opacity: 1;
+  margin-right: -2px;
+}
+
+
+form .button input{
+    margin-top: -200px;
+     height: 80%;
+     width: 30%;
+     border-radius: 5px;
+     border: none;
+     color: #fff;
+     font-size: 18px;
+     font-weight: 500;
+     letter-spacing: 1px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     background: linear-gradient(135deg, #613fd3, #4824ab);
+   }
+   form .button input:hover{
+    background: linear-gradient(-135deg, #049a18, #038607);
+    }
+  
+  /* button{
+      
+     border-radius: 5px;
+     border: none;
+     color: #fff;
+     font-size: 18px;
+     font-weight: 500;
+     letter-spacing: 1px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     background: linear-gradient(135deg, #613fd3, #4824ab);
+  }
+  button:hover{
+      background: linear-gradient(-135deg, #049a18, #038607);
+  } */

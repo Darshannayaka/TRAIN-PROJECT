@@ -1,0 +1,62 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Display Details</title>
+<link rel="icon" href="img/train-icon.ico" type="image/x-icon">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/displayTrainAndPassenger.css}">
+</head>
+<body>
+	<h1 align="center">TRAVELLING TRAIN</h1>
+	<table class="first-table">
+		<tr>
+			<th width="8%"><a th:href="@{/admin/adminLogin}">Home Page</a></th>
+			<th width="8%"><a th:href="@{/admin/list_users}">List All Users</a></th>
+			<th width="8%"><a th:href="@{/admin/trainMaster}">Train Master</a></th>
+			<th width="8%"><a th:href="@{/admin/addTrain}">Add Train</a></th>
+			<th width="8%"><a th:href="@{/admin/allTrains}">Show Train</a></th>
+			<th width="8%"><a th:href="@{/admin/displayTrainAndPassenger/0}">Display Train & Passenger</a></th>
+			<th width="8%"><a th:href="@{/logout}">Logout</a></th>
+		</tr>
+
+	</table>
+	
+	
+	<div >
+		<div>
+			<h1 align="center">Display Train and Passenger Booked List</h1>
+		</div>
+		<div class="second-Table">
+			<table class="table table-striped table-bordered" >
+				<thead class="thead-dark">
+					<tr>
+						<th>Booking Id</th>
+						 <th>Age</th>
+						<th>Gender</th>
+						<th>Phone Number</th>
+						<th>Aadhar Number</th>
+						<th>Ticket Price</th> 
+					</tr>
+				</thead>
+				<tbody class="data">
+					<tr th:each="passengerviews:${passengerview}" >
+						<td th:text="${'USERID'+passengerviews.id}" class="text-uppercase fw-bold mb-4 font-weight-bold">Book Id</td>
+						<td th:text="${passengerviews.age}">Age</td>
+						<td th:text="${passengerviews.gender}">Gender</td>
+						<td th:text="${passengerviews.phone}">Phone Number</td>
+						<td th:text="${passengerviews.aadharNumber}">Aadhar Number</td>
+						<td th:text="${passengerviews.ticketPrice}">Ticket Price</td>					
+						<!-- <td th:text="${}"></td> -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</body>
+</html>

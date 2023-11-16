@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="icon" href="img/train-icon.ico" type="image/x-icon">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Quicksand&display=swap}" rel="stylesheet">
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/CSS/profile_users.css}">
+</head>
+<body>
+<h1 align="center">TRAVELLING TRAIN</h1>
+
+<table>
+<tr>
+	    <th width="8%" ><a th:href="@{/user/index}">Home Page</a></th>
+		<th width="8%" ><a th:href="@{/user/profile-user}">USER: [<label th:text="${user.firstName}"></label>]</a></th>
+		<th width="8%"><a th:href="@{/logout}">Logout</a></th>
+</tr>
+</table>
+
+
+
+
+    <div class="card">
+        <div>
+          <img src="/img/user.svg" th:href="@{/user/index}">
+      
+          <h1 align="center"><span th:text="${user.firstName}"></span>  <span th:text=${user.lastName}></span><br>
+            <span></span>
+          </h1>
+          
+          <p><label>Email Id: </label> 
+           <span th:text="${user.email}"></span>
+          </p><br>
+          
+          <p><label>Aadhar Number: </label>
+           <span th:text="${user.aadharNumber}"></span>
+          </p><br>
+          
+          <p><label>Phone Number: </label>
+           <span th:text="${user.phone}"></span>
+          </p><br>
+          
+          <p><label>Address: </label>
+           <span th:text="${user.address}"></span>
+          </p><br>
+          
+          <ul>
+            <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+          
+        </div>
+      </div>
+      
+</body>
+</html>

@@ -1,0 +1,167 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #077D68;
+	background:url(../img/steamTrain.jpg);
+	background-size: cover;
+	font-family: 'Poppins', sans-serif;
+}
+.header{
+	
+	color:#fff;
+	font-weight: bolder;
+	margin-right: 32%;
+	margin-top: -20px;
+}
+table {
+	background-color: #EAB200;
+	text-align: center;
+	border-radius: 10px;
+	/* margin: auto; */
+	width:100%;
+	height: 30px;
+	margin-top: -9px; 
+	position: sticky;
+	top: 0;
+	box-shadow: 0 0 10px #333;
+	
+}
+.content i{
+	color: yellow;
+}
+
+h1 {
+	background-color: #ccc;
+	font-weight: bold;
+}
+
+h2 {
+	background-color: #ffffff;
+	border-radius: 5px;
+	outline: 1px solid black;
+	margin-left: 2px;
+	text-align: center;
+}
+
+p {
+	color: #ffffff;
+	font-family: sans-serif;
+	margin-left: 5px;
+}
+
+a {
+	color: #232323;
+	text-decoration: none;
+}
+.column1{
+	outline: 1px solid black;
+	border-radius: 5px;
+	margin-left: 10px;
+	margin-right: 6px;
+}
+.column2{
+	outline: 1px solid black;
+	border-radius: 5px;
+	margin-left: 10px;
+	margin-right: 6px;
+}
+.column3{
+	outline: 1px solid black;
+	border-radius: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+button {
+	
+	background-color: #232323;
+	color: #ffffff;
+	border-radius: 5px;
+	width: 95%;
+	margin-left: 10px;
+}
+
+.image-responsive1 {
+	border-radius: 2px;
+	outline: 1px solid black;
+	margin-bottom: 10px;
+}
+
+.image-responsive2 {
+	border-radius: 2px;
+	outline: 1px solid black;
+	margin-bottom: 10px;
+}
+
+.image-responsive3 {
+	border-radius: 2px;
+	outline: 1px solid black;
+	margin-bottom: 10px;
+}
+
+/* side bar style*/
+
+@media only screen and (max-width:600px){
+	
+}
+.sidebar{
+	width: 18%;
+	background: white;
+	height: 100vh;
+	position:fixed;
+	padding-top: 45px;
+}
+.siderbar a{
+	display: block;
+	width: 100%;
+	padding: 10% 25%;
+	text-decoration: none;
+	color: gray;
+}
+
+.content{
+	margin-left: 20%;
+}
+
+.item{
+		display: block;
+	width: 100%;
+	padding: 5% 15%;
+	text-decoration: none;
+	color: gray;
+}
+.item:hover{
+	background: #e2e2e2;
+}
+.sidebar .divider{
+	height: .5px;
+	width: 100%;
+	background: #e2e2e2;
+	margin-top: 10px;
+}
+
+.crossBtn{
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+h3{
+	color: white;
+}
+
+
+.time h2{
+    position: absolute;
+   /*   top: 50%;
+    left: 50%; */ 
+    margin-left:90%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    background-color: transparent;
+   text-transform: uppercase;
+}

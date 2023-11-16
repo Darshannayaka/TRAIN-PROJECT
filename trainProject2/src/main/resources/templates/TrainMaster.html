@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<title>Num Of Stops</title>
+<link rel="icon" href="img/train-icon.ico" type="image/x-icon">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" th:href="@{/CSS/trainMaster.css}">
+
+</head>
+<body>
+
+	<div class="text-center">
+		<div class="contain">
+			<div class="row">
+				<div>
+					<h1 th:align="center">TRAVELLING TRAIN</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+		</div>
+
+		<table>
+			<tr>
+			<th width="8%"><a th:href="@{/admin/adminLogin}">Home Page</a></th>
+			<th width="8%"><a th:href="@{/admin/list_users/0}">List All Users</a></th>
+			<th width="8%"><a th:href="@{/admin/trainMaster}">Train Master</a></th>
+			<th width="8%"><a th:href="@{/admin/addTrain}">Add Train</a></th>
+			<th width="8%"><a th:href="@{/admin/allTrains/0}">Show Train</a></th>
+			<th width="8%"><a th:href="@{/admin/displayTrainAndPassenger/0}">Display Train & Passenger</a></th>
+			<th width="8%"><a th:href="@{/logout}">Logout</a></th>
+			</tr>
+		</table>
+
+		<div class="row justify-content-center">
+			<div class="container">
+
+				<h3>Number Of Stops</h3>
+
+
+				<div>
+					<form th:action="@{/admin/saveTrainMaster}" method="post"
+						style="max-width: 600px; margin: 0 auto;">
+						<div class="m-2">
+
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Add Stops</label>
+								<div class="col-6">
+									<input type="text" name="numOfStops" class="form-control"
+										id="number" required placeholder="Enter Number Of Stops"  />
+									<span id="numberError" style="color: yellow;"></span>
+								</div>
+							</div>
+
+							
+							<div>
+								<button type="submit" class="btn btn-primary" onclick="validateNumber(event)">Save</button>
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<br>
+ <script>
+    function validateNumber(event) {
+      event.preventDefault();
+      const numberInput = document.getElementById('number');
+      const numberError = document.getElementById('numberError');
+      const numberRegex = /^\d+$/; // Regular expression to match numbers only
+      
+      if (!numberRegex.test(numberInput.value)) {
+        numberError.textContent = 'Invalid number format. Please enter digits only.';
+      } else {
+        numberError.textContent = '';
+        numberInput.setCustomValidity('');
+        document.forms[0].submit();
+      }
+    }
+  </script>
+</body>
+</html>

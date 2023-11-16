@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Final Confirmation</title>
+<link rel="stylesheet" th:href="@{/CSS/book_tickets.css}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+</head>
+<body>
+	<div>
+	<h1 class="head" align="center">TRAVELLING TRAIN</h1>
+	</div>
+
+
+
+	<table>
+        <tr>
+            <th width="8%"><a th:href="@{/user/index}">Home Page</a></th>
+            <th width="8%"><a th:href="@{/user/searchTrain}">Search Train</a></th>
+            <th width="8%"><a th:href="@{/logout}">Logout</a></th>
+        </tr>
+
+    </table>
+	
+	
+	<div class="container1">
+		<div class="title">Confirm Booking Details</div>
+		<div class="content">
+			<form th:action="@{/user/paymentFinal}" method="post">
+				<div>
+                    <input type="hidden" name="id" th:field="${passengerDetailss.id}"/>
+                </div>
+                <div class="user-details">
+					<div class="input-box">
+						<span class="details">First Name</span> <input type="text"
+							placeholder="Enter Your FirstName" name="firstName" 
+                            th:value="${passengerDetailss.firstName}" readonly="readonly" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Last Name</span> 
+                        <input type="text"
+							placeholder="Enter your LastName" name="lastName" 
+                            th:value="${passengerDetailss.lastName}" readonly="readonly" required>
+					</div>
+					<div class="input-box"> 
+                        <span class="details">Email</span> <input type="email"
+                        placeholder="Enter your Email" name="email" 
+                        th:value="${passengerDetailss.email}" readonly="readonly" required> 
+					</div>
+					<div class="input-box">
+						<span class="details">Age</span> <input type="text"
+							placeholder="Enter Your Age" name="age" minlength="1" maxlength="2"
+							th:value="${passengerDetailss.age}" readonly="readonly" required>
+					</div>
+					<div class="input-box">
+						<span class="details">Gender</span> 
+                        <input type="text" name="gender"  required
+                        th:value="${passengerDetailss.gender}"	readonly="readonly" />
+					</div>
+					<div class="input-box">
+						<span class="details">Phone Number</span> <input type="text"
+							placeholder="Enter your Phone Number" name="phone" 
+							th:value="${passengerDetailss.phone}" readonly="readonly" required>
+					</div>
+                    
+                    <div class="input-box">
+						<span class="details">Aadhar Number</span> <input type="text"
+							placeholder="Enter your AadharNumber" name="aadharNumber" 
+							th:value="${passengerDetailss.aadharNumber}" readonly="readonly" required>
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Train Name</span> <input type="text"
+						 name="trainName" th:value="${passengerDetailss.trainName}" required readonly="readonly"/>
+					</div>
+                    <div class="input-box">
+						<span class="details">Schedule</span> <input type="text"
+                        name="schedule"
+                        th:value="${passengerDetailss.schedule}" required
+                        readonly="readonly"  />
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Train From</span> <input type="text"
+                        name="trainFrom" 
+                        th:value="${passengerDetailss.trainFrom}" required
+                        readonly="readonly" />
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Train To</span> <input type="text"
+                        name="trainTo"
+                        th:value="${passengerDetailss.trainTo}" required
+                        readonly="readonly" />
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Departure Date</span> <input type="date" 
+                        name="departureDate" 
+                        th:value="${passengerDetailss.departureDate}" required
+                        readonly="readonly" />
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Train From Timing</span> <input type="time" 
+                        name="trainFromTiming" 
+                        th:value="${passengerDetailss.trainFromTiming}" required
+                        readonly="readonly" />
+					</div>
+
+                    <div class="input-box">
+						<span class="details">Train To Time</span> <input type="time" 
+                        name="trainToTime" 
+                        th:value="${passengerDetailss.trainToTime}" required
+                        readonly="readonly" />
+					</div>
+
+					<div class="input-box">
+						<span class="details">Ticket Price</span> <input type="text"
+                        name="ticketPrice" 
+                        th:value="${passengerDetailss.ticketPrice}" required
+                        readonly="readonly"  />
+							
+						</div>
+						
+						<!-- <div class="input-box">
+						<span class="button"></span> 
+						<a th:href="@{/user/cancel/{id}(id=${passengerDetailss.id})}" class="btn btn-danger">Cancel</a>
+							
+						</div> -->
+						
+						
+					
+				</div>
+				<div class="button">
+					<input type="submit" value="Submit"> 
+				</div>
+				<div >
+				
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+</body>
+</html>

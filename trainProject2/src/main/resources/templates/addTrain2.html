@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<title>Add Train Details</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" th:href="@{/CSS/addTrain.css}">
+
+</head>
+<body>
+
+	<div class="text-center">
+		<div class="contain">
+			<div class="row">
+				<div>
+					<h1 th:align="center">TRAVELLING TRAIN</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+		</div>
+
+<table>
+	<tr>
+	    <th width="8%" ><a th:href="@{/admin/adminLogin}">Home Page</a></th>
+		<th width="8%" ><a th:href="@{/admin/list_users}">List All Users</a></th>
+		<th width="8%"><a th:href="@{/admin/trainMaster}">Train Master</a></th>
+		<th width="8%"><a th:href="@{/admin/addTrain}">Add Train</a></th>
+		<th width="8%"><a th:href="@{/admin/allTrains}">Show Train</a></th>
+		<th width="8%"><a th:href="@{/admin/displayTrainAndPassenger}">Display Train & Passenger</a></th>
+		<th width="8%"><a th:href="@{/logout}">Logout</a></th>
+    </tr>
+</table>
+		
+		<div class="row justify-content-center">
+			<div class="container">
+
+				<h3>Add Train Details</h3>
+				
+				<!-- alert message -->
+				<div class="message">
+				<div th:if="${session.message}">
+				<div class="alert alert-primary" role="alert"
+				th:classappend="${'alert-'+session.message.type}">
+				<span class="text-dark fw-bold"
+				th:text="${session.message.content}"></span>
+				</div>
+				<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+				</div>
+				</div>
+				<!-- alert message -->
+			
+				<div>
+					<form th:action="@{/admin/addTrainDetails}" method="post"
+						style="max-width: 600px; margin: 0 auto;">
+						<div class="m-2">
+
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Train Name</label>
+								<div class="col-6">
+									<input type="text" class="form-control" name="trainName"
+										required placeholder="Enter Your Train Name" minlength="2"
+										maxlength="100"  />
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Schedule</label>
+								<div class="col-6">
+									<select name="schedule" class="col-10">
+									<option title="--select--">--select--</option>
+									<option value="Daily">Daily</option>
+									<option value="Weekly">Weekly</option>
+									</select>
+								</div>
+							</div>
+
+
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Train Stops</label>
+								<div class="col-6">
+									<select name="numberOfStops" class="form-control">
+									<option title="--select--">--select--</option>
+										<option th:each="trainmasters:${trainMaster}"
+												th:value="${trainmasters.id}"
+												th:text="${trainmasters.numOfStops}">
+											
+										</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Train From</label>
+								<div class="col-6">
+									<input type="text" name="trainFrom" class="form-control"
+										required placeholder="Enter Train From" minlength="2"
+										maxlength="100" />
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Train To</label>
+								<div class="col-6">
+									<input type="text" name="trainTo" class="form-control"
+										required placeholder="Enter Train To" minlength="2"
+										maxlength="100" />
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Departure Date</label>
+								<div class="col-6">
+									<input type="date" name="departureDate" class="form-control"
+										required placeholder="Enter Departure Date" minlength="2"
+										maxlength="100" />
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Train From Timing</label>
+								<div class="col-6">
+									<input type="time" name="trainFromTiming" class="form-control" required
+										placeholder="Enter Train From Timing" minlength="2" maxlength="100" />
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Train To Time</label>
+								<div class="col-6">
+									<input type="time" name="trainToTime" class="form-control" required
+										placeholder="Enter Train To Time" minlength="2" maxlength="100" />
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label class="col-form-lable col-4">Ticket Price</label>
+								<div class="col-6">
+									<input type="text" name="ticketPrice" class="form-control" required
+										placeholder="Enter Ticket Price" minlength="2" maxlength="100" />
+								</div>
+							</div>
+							
+							<div>
+								<button type="submit" class="btn btn-success">Add</button>
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<br>
+	<script>
+    var date = new Date();
+    var tdate = date.getDate();
+    var month = date.getMonth() + 1;//returns previous month so add +1
+   
+   
+    if(tdate < 10){
+    tdate = "0" + tdate;
+   }
+
+
+    if(month < 10){// index starts 0 to 9
+        month = "0" + month;
+    }
+   
+   
+    var year = date.getUTCFullYear() ;
+    var minDate = year + "-" + month + "-" + tdate;
+
+    document.getElementById("demo").setAttribute('min',minDate);
+
+    console.log(minDate);
+
+
+</script>
+	
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
